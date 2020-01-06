@@ -52,3 +52,15 @@
   * https://localhost:5000/delete_dev/<int:dev_id>
   * https://localhost:5000/url_params/<string:name>/<int:score>
   * https://localhost:5000/retrieve_pwd/<string:email>
+  
+ ### How to configure and run this application
+  * git clone https://github.com/keerthikumarn/python-flask-rest-with-sqlite-db.git
+  *
+   ```sh
+	$ cd python-flask-rest-with-sqlite-db
+	$ pip install -r requirements.txt
+	$ SET FLASK_APP=App
+	$ flask db.create
+	$ flask db.seed
+	$ python App.py
+   ```
