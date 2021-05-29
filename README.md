@@ -59,8 +59,8 @@
    ```sh
 	$ cd python-flask-rest-with-sqlite-db
 	$ pip install -r requirements.txt
-	$ SET FLASK_APP=App
+	$ SET FLASK_APP=app
 	$ flask db.create
 	$ flask db.seed
-	$ python App.py
+	$ python app.py
    ```
