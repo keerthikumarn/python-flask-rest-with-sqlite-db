@@ -39,19 +39,19 @@
   * run the command : python App.py
   
 ### REST APIs exposed in the application
-  * https://localhost:5000/login
-  * https://localhost:5000/my_rest_api
-  * https://localhost:5000/page_not_found
-  * https://localhost:5000/params
-  * https://localhost:5000/developers
-  * https://localhost:5000/users
-  * https://localhost:5000/register
-  * https://localhost:5000/developer_details/<int:dev_id>
-  * https://localhost:5000/add_dev
-  * https://localhost:5000/update_dev
-  * https://localhost:5000/delete_dev/<int:dev_id>
-  * https://localhost:5000/url_params/<string:name>/<int:score>
-  * https://localhost:5000/retrieve_pwd/<string:email>
+  * http://localhost:5000/login
+  * http://localhost:5000/my_rest_api
+  * http://localhost:5000/page_not_found
+  * http://localhost:5000/params
+  * http://localhost:5000/developers
+  * http://localhost:5000/users
+  * http://localhost:5000/register
+  * http://localhost:5000/developer_details/<int:dev_id>
+  * http://localhost:5000/add_dev
+  * http://localhost:5000/update_dev
+  * http://localhost:5000/delete_dev/<int:dev_id>
+  * http://localhost:5000/url_params/<string:name>/<int:score>
+  * http://localhost:5000/retrieve_pwd/<string:email>
   
  ### How to configure and run this application
   * git clone https://github.com/keerthikumarn/python-flask-rest-with-sqlite-db.git
