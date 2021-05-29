@@ -1,10 +1,15 @@
 from start import *
+
+
 '''
 Defining the DB models for the app
 '''
 
 
 class Users(db.Model):
+    '''
+    class for handling users
+    '''
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
     first_name = Column(String)
@@ -20,6 +25,9 @@ class Users(db.Model):
 
 
 class Developers(db.Model):
+    '''
+    class for handling developers
+    '''
     __tablename__ = 'developers'
     dev_id = Column(Integer, primary_key=True)
     first_name = Column(String)
@@ -34,20 +42,23 @@ class Developers(db.Model):
         self.prog_lang = prog_lang
 
 
-#JSON Schema for Users Model
+# JSON Schema for Users Model
 class UserSchema(ma.Schema):
+    '''
+    class for users schema
+    '''
     class Meta:
         fields = ('id', 'first_name', 'last_name', 'email', 'password')
 
 
 # JSON Schema for Developers Model
 class DevelopersSchema(ma.Schema):
+    '''
+    class for developers schema
+    '''
     class Meta:
         fields = ('id', 'first_name', 'last_name', 'module', 'prog_lang')
 
 
-users_schema = UserSchema()
 users_schema = UserSchema(many=True)
-
-developers_schema = DevelopersSchema()
 developers_schema = DevelopersSchema(many=True)
