@@ -1,6 +1,6 @@
 from db import *
 from start import *
-
+from constants import *
 
 @app.route('/')
 def welcome():
@@ -61,7 +61,7 @@ def register():
     email = request.form['email']
     test_user = Users.query.filter_by(email=email).first()
     if test_user:
-        return jsonify(message='The email id already exists in the database')
+        return jsonify(message=email_already_exists)
 
     first_name = request.form['first_name']
     last_name = request.form['last_name']
@@ -72,7 +72,7 @@ def register():
                      password=password)
     db.session.add(new_user)
     db.session.commit()
-    return jsonify(message='User created successfully !!'), success_response
+    return jsonify(message=user_create_success), success_response
 
 
 @app.route('/login', methods=['POST'])
@@ -86,9 +86,9 @@ def login():
     user = Users.query.filter_by(email=email, password=password).first()
     if not user:
         return jsonify(
-            message="You have entered an invalid email or password"), error_resource_not_found
+            message=invalid_email_pwd), error_resource_not_found
     access_token = create_access_token(identity=email)
-    return jsonify(message="Login Successful!", access_token=access_token)
+    return jsonify(message=login_success, access_token=access_token)
 
 
 @app.route('/retrieve_pwd/<string:email>', methods=['GET'])
@@ -111,7 +111,7 @@ def get_developer_details(dev_id: int):
         result = developers_schema.dump(developer)
         return jsonify(result)
     else:
-        return jsonify(message='User does not exist'), error_resource_not_found
+        return jsonify(message=no_user_exists), error_resource_not_found
 
 
 @app.route('/add_dev', methods=['POST'])

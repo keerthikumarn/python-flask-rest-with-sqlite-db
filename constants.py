@@ -25,3 +25,10 @@ min_passing_marks = 50
 error_resource_not_found = 401
 error_resource_already_exists = 409
 success_response = 201
+
+# messages
+login_success = 'Login Successful!'
+email_already_exists = 'The email id already exists in the database'
+user_create_success = 'User created successfully !!'
+invalid_email_pwd = 'You have entered an invalid email or password'
+no_user_exists = 'User does not exist'
