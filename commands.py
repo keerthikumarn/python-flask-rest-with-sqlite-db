@@ -2,7 +2,7 @@ from start import *
 from db import Users, Developers
 
 
-#DB creation
+# DB creation
 @app.cli.command('db.create')
 def db_create():
     db.create_all()
@@ -18,7 +18,6 @@ def db_drop():
 @app.cli.command('db.seed')
 def db_seed():
 
-    #Developers
     dev1 = Developers(first_name='John',
                       last_name='Daniel',
                       module='KNOWN',
@@ -35,13 +34,13 @@ def db_seed():
     db.session.add(dev2)
     db.session.add(dev3)
 
-    #Users
+    # Users
     test_user = Users(first_name='test',
                       last_name='user',
                       email='user@test.com',
                       password='pass')
     db.session.add(test_user)
 
-    #commit the data to the tables in the DB
+    # commit the data to the tables in the DB
     db.session.commit()
     print("Database seeding completed successfully !")
