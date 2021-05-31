@@ -1,6 +1,7 @@
+from constants import *
 from db import *
 from start import *
-from constants import *
+
 
 @app.route('/')
 def welcome():
@@ -115,7 +116,6 @@ def get_developer_details(dev_id: int):
 
 
 @app.route('/add_dev', methods=['POST'])
-# @jwt_required
 def add_developer():
     first_name = request.form['first_name']
     developer = Developers.query.filter_by(first_name=first_name).first()
@@ -137,7 +137,6 @@ def add_developer():
 
 
 @app.route('/update_dev', methods=['PUT'])
-# @jwt_required
 def update_developer_details():
     dev_id = int(request.form['dev_id'])
     developer = Developers.query.filter_by(dev_id=dev_id).first()
@@ -153,7 +152,6 @@ def update_developer_details():
 
 
 @app.route('/delete_dev/<int:dev_id>', methods=['DELETE'])
-# @jwt_required
 def delete_developer(dev_id: int):
     developer = Developers.query.filter_by(dev_id=dev_id).first()
     if developer:
