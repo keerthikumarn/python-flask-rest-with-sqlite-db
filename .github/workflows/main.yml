@@ -40,8 +40,7 @@ jobs:
         run: | 
           echo Installing dependencies from requirement!,
           echo $PWD,
-          ls,
-          pip install -r requirements.txt,
+          pip install -r ${{ github.workspace }}/requirements.txt,
           echo Launching application!,
           python app.py
           
