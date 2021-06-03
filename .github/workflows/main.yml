@@ -25,6 +25,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+          
+      - name: See where we are
+        run: |
+          pwd
+          ls -ld .
+          ls -l
+         
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: | 
@@ -39,7 +49,6 @@ jobs:
         run: | 
           echo Installing dependencies from requirement!,
           echo $PWD,
-          ls,
           pip install -r requirements.txt,
           echo Launching application!,
           python app.py
@@ -57,13 +66,4 @@ jobs:
           pip install -r ./requirements.txt,
           python app.py
 
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-          
-      - name: See where we are
-        run: |
-          pwd
-          ls -ld .
-          ls -l
-         
+
