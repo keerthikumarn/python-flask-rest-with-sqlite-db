@@ -42,9 +42,11 @@ jobs:
           echo $PWD,
           pip install -r ${{ github.workspace }}/requirements.txt
           echo Launching application!,
+          # run the application in the background
           python app.py &
           
       - name: Run application 
         run: | 
           echo Running application!,
+          # to get the status code
           curl -I http://localhost:5000/
