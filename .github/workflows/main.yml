@@ -29,6 +29,8 @@ jobs:
       - name: Run a one-line script
         run: | 
           echo Installing dependencies from requirement!,
+          echo $PWD,
+          ls,
           pip install -r requirements.txt,
           echo Launching application!,
           python app.py
