@@ -40,29 +40,8 @@ jobs:
         run: | 
           echo Installing dependencies from requirement!,
           echo $PWD,
-          pip install -r ${{ github.workspace }}/requirements.txt,
+          pip install -r ${{ github.workspace }}/requirements.txt
           echo Launching application!,
-          python app.py
-          
-      - name: Run a one-line script with ls
-        run: | 
-          echo Installing dependencies from requirement!,
-          echo $PWD,
-          pip install -r requirements.txt
-          echo Launching application!,
-          python app.py
-      # Runs a set of commands using the runners shell
-      
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-
-      # Runs a set of commands using the runners shell
-      - name: Test new pip command
-        run: |
-          echo Add other actions to build,
-          pip install -r ./requirements.txt,
           python app.py
 
 
