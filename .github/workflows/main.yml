@@ -43,5 +43,8 @@ jobs:
           pip install -r ${{ github.workspace }}/requirements.txt
           echo Launching application!,
           python app.py
-
-
+          
+      - name: Run application 
+        run: | 
+          echo Running application!,
+          curl -I http://localhost:5000/
